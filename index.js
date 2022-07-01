@@ -42,11 +42,6 @@ const run = async () => {
       const filter = { _id: ObjectId(id) };
       const options = { upsert: true };
       const updateDoc = {
-        /* $set: {
-          tile: data.title,
-          task: data.task,
-          date: data.date,
-        }, */
         $set: data,
       };
       const cursor = await collection.updateOne(filter, updateDoc, options);
